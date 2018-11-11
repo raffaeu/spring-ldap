@@ -4,7 +4,7 @@
 
   <groupId>com.ubs.springldap</groupId>
   <artifactId>spring-ldap</artifactId>
-  <packaging>jar</packaging>
+  <packaging>war</packaging>
   <version>1.0-SNAPSHOT</version>
   <name>spring-ldap</name>
   <url>http://maven.apache.org</url>
@@ -20,6 +20,13 @@
   </properties>
 
   <dependencies>
+
+    <!-- Tomcat -->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-tomcat</artifactId>
+      <scope>provided</scope>
+    </dependency>
 
     <!-- Unit tests -->
     <dependency>
@@ -72,6 +79,7 @@
 
   <!-- Builder -->
   <build>
+    <finalName>${artifactId}</finalName>
     <plugins>
       <plugin>
         <groupId>org.springframework.boot</groupId>
